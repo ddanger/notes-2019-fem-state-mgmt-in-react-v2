@@ -65,3 +65,10 @@ There isn't much to it.
 - compose - creates a new function that is the functional composition of its arguments)
 - bindActionCreator, bindActionCreators - optionally used to reduce boilerplate. Just creates a special-purpose function you can use to dispatch a particular action
 - applyMiddleware - used to inject code into the lifecycle of redux to do stuff based on what's happening
+
+## Redux Thunk
+
+## redux-observable
+
+## MobX
+
