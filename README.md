@@ -1,4 +1,5 @@
 notes-fem-state-mgmt-in-react-v2
+
 Notes on the frontend masters workshop "State Management in React, v2" by Steve Kinney
 
 # Day 1: State in React
@@ -66,9 +67,27 @@ There isn't much to it.
 - bindActionCreator, bindActionCreators - optionally used to reduce boilerplate. Just creates a special-purpose function you can use to dispatch a particular action
 - applyMiddleware - used to inject code into the lifecycle of redux to do stuff based on what's happening
 
+## Redux
+- mapStateToProps - function that takes the state and returns something to pass to the component as props
+  - choose the state data you need. If you pass too much, you'll get unnecessary re-renders
+- mapDispatchToProps - there are various formats. Ultimately we use a real simple one that just returns the action creators
+- connect
+
+## Setting Up Data
+- Prefer objects over arrays `{ 1: { data: 'stuff' }, 2: { data: 'more stuff } }` instead of `[ { data: 'stuff' }, { data: 'more stuff' } ]`
+
+## Selectors and Reselect
+- reselect - memoization 
+
 ## Redux Thunk
+- actiion creator returns a function that takes a `dispatch` param. It does async stuff and then calls `dispatch`.
 
 ## redux-observable
+- epic - function that takes a stream of actions and returns a stream of actions.
+  - Allows you to transform the action stream.
+  - It's cool becuase it enables cancellation of async stuff.
 
 ## MobX
-
+It's like Vue.js but more complex.
+- computed properties
+- decorators
