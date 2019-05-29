@@ -1,6 +1,7 @@
-# notes-fem-state-mgmt-in-react-v2
+notes-fem-state-mgmt-in-react-v2
 Notes on the frontend masters workshop "State Management in React, v2" by Steve Kinney
 
+# Day 1: State in React
 - While the React API seems to change a lot, this resource is really good and more timeless for [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 - State vs. Props: your state may become a childs props. Or another way to say it, your props may be somebody else's state.
 - Interesting `setState` variations
@@ -43,4 +44,24 @@ class Sample extends React.component {
   - Custom hook useLocalStorage is cool
   
 # Day 2: redux, redux-thunk, redux-observable, mobx
-- 
+## Redux
+There isn't much to it.
+
+### Vocab
+- reducer - a function which takes state and action and returns new state  
+  - don't mutate the state. Must return new state.
+- action - javascript object with a `type` and a `payload` and maybe a `meta`
+- action creator - a function to return an action (and probably take an argument or two)
+- store - the thing that holds your state tree and exposes functions to get it and dispatch actions to change it
+- state - the snapshot of the current data in the store
+
+### Functions
+- createStore - accepts a reducer function and optionally middleware
+  - getState - returns the current state
+  - dispatch - send (dispatch) an action into the reducer. action has a type and a payload and optionally meta
+  - subscribe - you pass a function in, and it will be called after every dispatch
+  - replaceReducer - replaces the reducer your store is using. Helpful if you're code-splitting or loading parts of your app on the fly
+- combineReducers - often for maintainability you create multiple small reducers for different branches of the state tree. But you need to combine them prior to creating your store. But despite this, the actions you dispatch will flow through all reducers.
+- compose - creates a new function that is the functional composition of its arguments)
+- bindActionCreator, bindActionCreators - optionally used to reduce boilerplate. Just creates a special-purpose function you can use to dispatch a particular action
+- applyMiddleware - used to inject code into the lifecycle of redux to do stuff based on what's happening
