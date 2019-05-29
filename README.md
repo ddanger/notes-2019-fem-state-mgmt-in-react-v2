@@ -32,3 +32,15 @@ class Sample extends React.component {
 - "The prop-drilling struggle is real!"
 - "You can document what your intent was by using a well-named function"
 - Lowest common ancestor often doesn't work in practice, because state tends to end up on the root
+## Mitigating the prop-drilling problem
+- Higher order components
+    - allow you to wrap a component with the state/callbacks
+- Render props
+    - another way to wrap component with state/callbacks
+- Context API
+- Hooks. What are hooks? Hooks are a new api for managing react state that's completely different from the old APIs. yay!
+  - useReducer cool for form validation or in any case where various pieces of state interact with each-other
+  - Custom hook useLocalStorage is cool
+  
+# Day 2: redux, redux-thunk, redux-observable, mobx
+- 
