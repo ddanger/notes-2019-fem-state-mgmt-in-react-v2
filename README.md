@@ -91,3 +91,10 @@ There isn't much to it.
 It's like Vue.js but more complex.
 - computed properties
 - decorators
+
+-About structuring the data. You stressed the importance of normalizing data for redux. Would you say it's completely unnecessary to do that with MobX?
+-Thinking about undo/redo functionality. You mentioned in the past that's a feature in your app. You also mentioned maybe moving to Context API.  Wouldn't that make undo/redo difficult?
+
+-mobx-state-tree is a lib that gives the benefits of MobX in a global tree structure
+
+
